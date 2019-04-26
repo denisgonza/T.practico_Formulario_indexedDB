@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registro indexDB</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
+              integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <script src="js/jquery-3.4.0.js" type="text/javascript"></script>
+        <script src="js/funciones.js" type="text/javascript"></script>
+        <link href="css/estiloformu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <!--body-->
+    <body onload="startDB()">
+        <div class="formulario">
+            <form id="datosClientes">
+                <div class="cabeceraform">
+                    <h3>Clientes</h3>
+                </div>
+
+                <div class="contenedor">
+                    <fieldset>
+                        <legend> 
+                            <b>Datos personales</b> 
+                        </legend> 
+                        <div class="fila">
+                            <div class="col-25">
+                                <label for="nombre">Nombre:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="nombre" name="nombre" maxlength="50" onkeypress="return soloLetras(event)" placeholder="nombre.." required>
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="col-25">
+                                <label for="apellido">Apellido:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="apellido" name="apellido" maxlength="50" onkeypress="return soloLetras(event)" placeholder="apellido.." required>
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="col-25">
+                                <label for="Cedula">Cédula:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="cedula" name="cedula" maxlength="50" onkeypress="return soloNumeros(event)" onkeyup="formatearNumero(this, this.value.charAt(this.value.length - 1))" placeholder="Nº de cédula.." required>
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="col-25">
+                                <label for="edad">Edad:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="number" id="edad" name="edad" min="1" max="120" onkeypress="return soloNumeros(event)" placeholder="edad.." required>
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="col-25">
+                                <label for="sexo">Sexo:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="sexo" name="sexo" maxlength="6" onkeypress="return soloLetras(event)" placeholder="sexo.." required>
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="col-25">
+                                <label for="direccion">Dirección:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="direccion" name="direccion" maxlength="600" placeholder="dirección.." required>
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="col-25">
+                                <label for="correo">Correo:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="email" id="correo" name="correo" maxlength="400" placeholder="Correo electronico.." required>
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="col-25">
+                                <label for="telefono">Teléfono:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="telefono" name="telefono" maxlength="20" onkeypress="return soloNumeros(event)" placeholder="teléfono.." required>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="piedepaginaform">
+                    <button class="boton" id="btnSubmit"><i class="fa fa-user-plus"> &nbsp;</i>Agregar</button>
+                    <button class="boton" id="editar"><i class="fa fa-wrench"> &nbsp;</i>Modificar</button>
+                    <button class="boton"><i class="fa fa-times"> &nbsp;</i>Salir</button>
+                </div>
+            </form>
+        </div>
+        <br>
+        <br>
+            <br>
+            <hr>
+            <div id="elements">
+                <table class="tabla">
+                    <thead>
+                    <div class="tablaheader">
+                        <h3>Tabla de Clientes</h3>
+                    </div>
+                    <tr>
+                        <th>Cod</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Cédula</th>
+                        <th>Edad</th>
+                        <th>Sexo</th>
+                        <th>Dirección</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                    </tr>
+                    </thead>
+                    <tbody id="elementsList">
+
+                    </tbody>
+                </table>
+                <br>
+            </div>  
+        <script src="js/databaseIndexedDB.js" type="text/javascript"></script>
+    </body>
+</html>

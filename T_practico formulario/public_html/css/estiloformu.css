@@ -1,0 +1,209 @@
+/*---------------Estilos CSS---------------*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica;
+}
+
+.formulario {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border: 1px solid skyblue;
+}
+
+.cabeceraform {
+    text-align: center;
+    /*background-color: skyblue;*/
+    background: linear-gradient(skyblue, #72D4F5);
+    color: black;
+    padding: 10px;
+}
+
+.contenedor {
+    /*background-color: #f8f8f8;*/
+    background: #F9F9F9;
+    padding: 28px;
+}
+
+fieldset {
+    border: 1px solid silver;
+    background: linear-gradient(#F9F9F9, #F1F1F1);
+    padding: 20px 20px;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=text], input[type=number], input[type=email] {
+    width: 100%;
+    padding: 12px;
+    text-transform: capitalize;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    outline: none;
+}
+
+input[type=email] {
+    text-transform: none;
+}
+ 
+input[type=text]:focus, input[type=number]:focus, input[type=email]:focus {
+    border: 2px solid skyblue;
+}
+
+input[type=text]:hover, input[type=number]:hover, input[type=email]:hover, 
+input[type=text]:focus, input[type=number]:focus, input[type=email]:focus {
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 10px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 10px;
+}
+
+.fila:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.piedepaginaform {
+    text-align: center;
+    background-color: #ddd;
+    padding: 14px;
+    border: 1px solid;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top-color: skyblue;
+}
+
+.boton {
+    /*background-color: skyblue;*/
+    background: linear-gradient(skyblue, #7EBFD9);
+    color: black;
+    padding: 10px 12px;
+    border: 1px solid cornflowerblue;
+    font-family: inherit;
+    border-radius: 2px;
+    outline: none;
+}
+.boton:hover {
+    /*background-color: deepskyblue;*/
+    background: linear-gradient(deepskyblue, skyblue);
+}
+
+hr {
+    border: 0.5px solid skyblue;
+}
+
+/*Estilo de la tabla donde voy a recuperar los datos*/
+
+.tabla {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: inherit;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.tablaheader {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    text-align: center;
+    background-color: deepskyblue;
+    color: white;
+    padding: 3px;
+}
+
+.tabla td, .tabla th {
+    border: 1px solid #ddd;
+    padding: 8px;
+} 
+
+.tabla tr:nth-child(even){background-color: #f2f2f2;}
+
+.tabla tr:hover {background-color: #ddd;}
+
+.tabla th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: skyblue;
+    color: white;
+}
+
+@media screen and (min-width: 621px) and (max-width: 1233px) {
+     table {
+       display: block;
+       overflow-x: auto;
+     }
+     
+     .tablaheader {
+         width: 80%;
+     }
+     
+}
+
+@media screen and (max-width: 620px) {
+       table {
+           width:100%;
+       }
+       thead {
+           display: none;
+       }
+       tr:nth-of-type(2n) {
+           background-color: inherit;
+       }
+       tr td:first-child {
+           font-weight:bold;
+           font-size:1.3em;
+       }
+       tbody td {
+           display: block;
+           text-align:center;
+       }
+       tbody td:before {
+           content: attr(data-th);
+           display: block;
+           text-align:center;
+       }
+       
+}
+
+@media screen and (max-width: 520px) {
+    .formulario {
+        width: 100%;
+    }
+    
+    .tabla {
+        width: 100%;
+    }
+    
+    .tablaheader {
+        width: 100%;
+    }
+    
+    .formulario, .col-25, .col-75, input[type=text], input[type=number], input[type=email] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
