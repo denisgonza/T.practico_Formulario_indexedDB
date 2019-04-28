@@ -218,30 +218,6 @@ function deletedateId(cedula) {
     };
 }
 
-function Eliminar(e) {
-    dbClientes.splice(e, 1); // Args (posición en el array, numero de items a eliminar)
-    localStorage.setItem("dbClientes", JSON.stringify(dbClientes));
-    return Mensaje(2);
-}
-
-function Editar() {
-    //console.log("Funcion editar" + d);
-    dbClientes[d] = JSON.stringify({
-        Nombre: $("#nombre").val(),
-        Apellido: $("#apellido").val(),
-        CI: $("#cedula").val(),
-        Edad: $("#edad").val(),
-        Sexo: $("#sexo").val(),
-        Direccion: $("#direccion").val(),
-        Correo: $("#correo").val(),
-        Telefono: $("#telefono").val()
-    });
-    localStorage.setItem("dbClientes", JSON.stringify(dbClientes));
-    operacion = "A"; //Regresamos el valor original
-    limpiarFormulario();
-    return true;
-}
-
 function limpiarFormulario() {
     $("#nombre").val("");
     $("#apellido").val("");
